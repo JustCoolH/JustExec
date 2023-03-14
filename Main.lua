@@ -1,327 +1,382 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
 
--- Instances:
+-- Instances: 43 | Scripts: 9 | Modules: 0
+local G2L = {};
 
-local JustExec = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local Header = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local ImageLabel = Instance.new("ImageLabel")
-local ExecutorPanel = Instance.new("Frame")
-local Clear = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local Execute = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local TextBox = Instance.new("TextBox")
-local UICorner_5 = Instance.new("UICorner")
-local TabNav = Instance.new("Frame")
-local Executor = Instance.new("ImageButton")
-local QuickHacks = Instance.new("ImageButton")
-local QuickHacksPanel = Instance.new("ScrollingFrame")
-local Jump = Instance.new("Frame")
-local Bar = Instance.new("Frame")
-local Button = Instance.new("TextButton")
-local JumpLabel = Instance.new("TextLabel")
-local JumpPercent = Instance.new("TextLabel")
-local Speed = Instance.new("Frame")
-local Bar_2 = Instance.new("Frame")
-local Button_2 = Instance.new("TextButton")
-local SpeedLabel = Instance.new("TextLabel")
-local SpeedPercent = Instance.new("TextLabel")
-local Fly = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local ImageButton = Instance.new("ImageButton")
-local UICorner_7 = Instance.new("UICorner")
+-- StarterGui.JustExec
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[JustExec]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
+-- StarterGui.JustExec.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["AutoLocalize"] = false;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(40, 40, 40);
+G2L["2"]["Size"] = UDim2.new(0, 518, 0, 333);
+G2L["2"]["Position"] = UDim2.new(0.278820663690567, 0, -0.025407062843441963, 300);
 
-JustExec.Name = "JustExec"
-JustExec.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-JustExec.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.JustExec.Frame.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
 
-Frame.Parent = JustExec
-Frame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-Frame.Position = UDim2.new(0.278820664, 0, -0.0254070628, 300)
-Frame.Size = UDim2.new(0, 518, 0, 333)
 
-UICorner.Parent = Frame
+-- StarterGui.JustExec.Frame.Header
+G2L["4"] = Instance.new("Frame", G2L["2"]);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["4"]["Size"] = UDim2.new(0, 518, 0, 37);
+G2L["4"]["Position"] = UDim2.new(-0.0010853186249732971, 0, -0.0017036795616149902, 0);
+G2L["4"]["Name"] = [[Header]];
 
-Header.Name = "Header"
-Header.Parent = Frame
-Header.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-Header.Position = UDim2.new(-0.00108531862, 0, -0.00170367956, 0)
-Header.Size = UDim2.new(0, 518, 0, 37)
+-- StarterGui.JustExec.Frame.Header.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["4"]);
 
-UICorner_2.Parent = Header
 
-TextLabel.Parent = Header
-TextLabel.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(56, 56, 56)
-TextLabel.Position = UDim2.new(0.295366794, 0, 0.0153330211, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 36)
-TextLabel.Font = Enum.Font.Arial
-TextLabel.Text = "JustExec"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 19.000
+-- StarterGui.JustExec.Frame.Header.TextLabel
+G2L["6"] = Instance.new("TextLabel", G2L["4"]);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextSize"] = 19;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Size"] = UDim2.new(0, 200, 0, 36);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["6"]["Text"] = [[JustExec]];
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Position"] = UDim2.new(0.2953667938709259, 0, 0.015333021059632301, 0);
 
-ImageLabel.Parent = Header
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Position = UDim2.new(0.32432431, 0, 0, 0)
-ImageLabel.Size = UDim2.new(0, 37, 0, 37)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=12775323866"
+-- StarterGui.JustExec.Frame.Header.ImageLabel
+G2L["7"] = Instance.new("ImageLabel", G2L["4"]);
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["Image"] = [[http://www.roblox.com/asset/?id=12775323866]];
+G2L["7"]["Size"] = UDim2.new(0, 37, 0, 37);
+G2L["7"]["BackgroundTransparency"] = 1;
+G2L["7"]["Position"] = UDim2.new(0.3243243098258972, 0, 0, 0);
 
-ExecutorPanel.Name = "ExecutorPanel"
-ExecutorPanel.Parent = Frame
-ExecutorPanel.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-ExecutorPanel.Position = UDim2.new(0.102316603, 0, 0.127425462, 0)
-ExecutorPanel.Size = UDim2.new(0, 430, 0, 281)
-ExecutorPanel.Visible = false
+-- StarterGui.JustExec.Frame.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["2"]);
 
-Clear.Name = "Clear"
-Clear.Parent = ExecutorPanel
-Clear.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-Clear.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Clear.Position = UDim2.new(0.671441555, 0, 0.86225009, 0)
-Clear.Size = UDim2.new(0, 142, 0, 37)
-Clear.Font = Enum.Font.SourceSans
-Clear.Text = "Clear"
-Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
-Clear.TextSize = 17.000
 
-UICorner_3.Parent = Clear
+-- StarterGui.JustExec.Frame.ExecutorPanel
+G2L["9"] = Instance.new("Frame", G2L["2"]);
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(40, 40, 40);
+G2L["9"]["Size"] = UDim2.new(0, 430, 0, 281);
+G2L["9"]["Position"] = UDim2.new(0.10231660306453705, 0, 0.12742546200752258, 0);
+G2L["9"]["Name"] = [[ExecutorPanel]];
 
-Execute.Name = "Execute"
-Execute.Parent = ExecutorPanel
-Execute.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-Execute.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Execute.Position = UDim2.new(0, 0, 0.86225009, 0)
-Execute.Size = UDim2.new(0, 152, 0, 37)
-Execute.Font = Enum.Font.SourceSans
-Execute.Text = "Execute"
-Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
-Execute.TextSize = 17.000
+-- StarterGui.JustExec.Frame.ExecutorPanel.Clear
+G2L["a"] = Instance.new("TextButton", G2L["9"]);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["a"]["TextSize"] = 17;
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["Size"] = UDim2.new(0, 142, 0, 37);
+G2L["a"]["Name"] = [[Clear]];
+G2L["a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["a"]["Text"] = [[Clear]];
+G2L["a"]["Position"] = UDim2.new(0.6714415550231934, 0, 0.8622500896453857, 0);
 
-UICorner_4.Parent = Execute
+-- StarterGui.JustExec.Frame.ExecutorPanel.Clear.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
 
-TextBox.Parent = ExecutorPanel
-TextBox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-TextBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.Position = UDim2.new(0.0139534883, 0, 0.0243902784, 0)
-TextBox.Size = UDim2.new(0, 424, 0, 213)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.MultiLine = true
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.TextSize = 17.000
-TextBox.TextWrapped = true
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
 
-UICorner_5.Parent = TextBox
+-- StarterGui.JustExec.Frame.ExecutorPanel.Clear.LocalScript
+G2L["c"] = Instance.new("LocalScript", G2L["a"]);
 
-TabNav.Name = "TabNav"
-TabNav.Parent = Frame
-TabNav.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-TabNav.BackgroundTransparency = 1.000
-TabNav.BorderColor3 = Color3.fromRGB(39, 39, 39)
-TabNav.Position = UDim2.new(0, 0, 0.14800705, 0)
-TabNav.Size = UDim2.new(0, 53, 0, 213)
 
-Executor.Name = "Executor"
-Executor.Parent = TabNav
-Executor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Executor.BackgroundTransparency = 1.000
-Executor.Position = UDim2.new(-0.0196078327, 0, -7.16375071e-05, 0)
-Executor.Size = UDim2.new(0, 51, 0, 60)
-Executor.Image = "rbxassetid://12582726730"
+-- StarterGui.JustExec.Frame.ExecutorPanel.Execute
+G2L["d"] = Instance.new("TextButton", G2L["9"]);
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["d"]["TextSize"] = 17;
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["Size"] = UDim2.new(0, 152, 0, 37);
+G2L["d"]["Name"] = [[Execute]];
+G2L["d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["d"]["Text"] = [[Execute]];
+G2L["d"]["Position"] = UDim2.new(0, 0, 0.8622500896453857, 0);
 
-QuickHacks.Name = "QuickHacks"
-QuickHacks.Parent = TabNav
-QuickHacks.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-QuickHacks.BackgroundTransparency = 1.000
-QuickHacks.Position = UDim2.new(0.0176852252, 0, 0.400085032, 0)
-QuickHacks.Size = UDim2.new(0, 49, 0, 52)
-QuickHacks.Image = "rbxassetid://12582724778"
+-- StarterGui.JustExec.Frame.ExecutorPanel.Execute.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
 
-QuickHacksPanel.Name = "QuickHacksPanel"
-QuickHacksPanel.Parent = Frame
-QuickHacksPanel.Active = true
-QuickHacksPanel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-QuickHacksPanel.BackgroundTransparency = 1.000
-QuickHacksPanel.Position = UDim2.new(0.102316603, 0, 0.126126125, 0)
-QuickHacksPanel.Size = UDim2.new(0, 430, 0, 291)
 
-Jump.Name = "Jump"
-Jump.Parent = QuickHacksPanel
-Jump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Jump.Position = UDim2.new(0.513953507, -150, 0.112814561, 0)
-Jump.Size = UDim2.new(0, 300, 0, 49)
-Jump.Style = Enum.FrameStyle.RobloxRound
+-- StarterGui.JustExec.Frame.ExecutorPanel.Execute.LocalScript
+G2L["f"] = Instance.new("LocalScript", G2L["d"]);
 
-Bar.Name = "Bar"
-Bar.Parent = Jump
-Bar.BackgroundColor3 = Color3.fromRGB(51, 134, 212)
-Bar.BorderSizePixel = 0
-Bar.Position = UDim2.new(0, 14, 0, 12)
-Bar.Size = UDim2.new(0, 255, 0, 10)
 
-Button.Name = "Button"
-Button.Parent = Bar
-Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Button.Draggable = true
-Button.Position = UDim2.new(0, 18, 0, -10)
-Button.Size = UDim2.new(0, 30, 0, 30)
-Button.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-Button.Font = Enum.Font.SourceSans
-Button.Text = ""
-Button.TextSize = 14.000
+-- StarterGui.JustExec.Frame.ExecutorPanel.TextBox
+G2L["10"] = Instance.new("TextBox", G2L["9"]);
+G2L["10"]["TextSize"] = 17;
+G2L["10"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["10"]["TextWrapped"] = true;
+G2L["10"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["MultiLine"] = true;
+G2L["10"]["Size"] = UDim2.new(0, 424, 0, 213);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Text"] = [[]];
+G2L["10"]["Position"] = UDim2.new(0.013953488320112228, 0, 0.02439027838408947, 0);
+G2L["10"]["ClearTextOnFocus"] = false;
 
-JumpLabel.Name = "JumpLabel"
-JumpLabel.Parent = Jump
-JumpLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-JumpLabel.BackgroundTransparency = 1.000
-JumpLabel.Position = UDim2.new(-0.276869088, 0, -0.164183915, 0)
-JumpLabel.Size = UDim2.new(0, 69, 0, 50)
-JumpLabel.Font = Enum.Font.SourceSans
-JumpLabel.Text = "Jump"
-JumpLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-JumpLabel.TextSize = 20.000
+-- StarterGui.JustExec.Frame.ExecutorPanel.TextBox.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
 
-JumpPercent.Name = "JumpPercent"
-JumpPercent.Parent = Jump
-JumpPercent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-JumpPercent.BackgroundTransparency = 1.000
-JumpPercent.Position = UDim2.new(1.03793716, 0, -0.232304826, 0)
-JumpPercent.Size = UDim2.new(0, 38, 0, 48)
-JumpPercent.Font = Enum.Font.SourceSans
-JumpPercent.Text = "0"
-JumpPercent.TextColor3 = Color3.fromRGB(255, 255, 255)
-JumpPercent.TextSize = 20.000
 
-Speed.Name = "Speed"
-Speed.Parent = QuickHacksPanel
-Speed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Speed.Position = UDim2.new(0.509302378, -150, 0.0181344524, 0)
-Speed.Size = UDim2.new(0, 300, 0, 49)
-Speed.Style = Enum.FrameStyle.RobloxRound
+-- StarterGui.JustExec.Frame.TabNav
+G2L["12"] = Instance.new("Frame", G2L["2"]);
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(40, 40, 40);
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Size"] = UDim2.new(0, 53, 0, 213);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(40, 40, 40);
+G2L["12"]["Position"] = UDim2.new(0, 0, 0.14800705015659332, 0);
+G2L["12"]["Name"] = [[TabNav]];
 
-Bar_2.Name = "Bar"
-Bar_2.Parent = Speed
-Bar_2.BackgroundColor3 = Color3.fromRGB(51, 134, 212)
-Bar_2.BorderSizePixel = 0
-Bar_2.Position = UDim2.new(0, 14, 0, 12)
-Bar_2.Size = UDim2.new(0, 255, 0, 10)
+-- StarterGui.JustExec.Frame.TabNav.Executor
+G2L["13"] = Instance.new("ImageButton", G2L["12"]);
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["Image"] = [[rbxassetid://12582726730]];
+G2L["13"]["Size"] = UDim2.new(0, 51, 0, 60);
+G2L["13"]["Name"] = [[Executor]];
+G2L["13"]["Position"] = UDim2.new(-0.01960783265531063, 0, -0.00007163750706240535, 0);
+G2L["13"]["BackgroundTransparency"] = 1;
 
-Button_2.Name = "Button"
-Button_2.Parent = Bar_2
-Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Button_2.Draggable = true
-Button_2.Position = UDim2.new(0, 37, 0, -11)
-Button_2.Size = UDim2.new(0, 30, 0, 30)
-Button_2.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-Button_2.Font = Enum.Font.SourceSans
-Button_2.Text = ""
-Button_2.TextSize = 14.000
+-- StarterGui.JustExec.Frame.TabNav.Executor.LocalScript
+G2L["14"] = Instance.new("LocalScript", G2L["13"]);
 
-SpeedLabel.Name = "SpeedLabel"
-SpeedLabel.Parent = Speed
-SpeedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedLabel.BackgroundTransparency = 1.000
-SpeedLabel.Position = UDim2.new(-0.276869088, 0, -0.164183915, 0)
-SpeedLabel.Size = UDim2.new(0, 69, 0, 50)
-SpeedLabel.Font = Enum.Font.SourceSans
-SpeedLabel.Text = "Speed"
-SpeedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-SpeedLabel.TextSize = 20.000
 
-SpeedPercent.Name = "SpeedPercent"
-SpeedPercent.Parent = Speed
-SpeedPercent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedPercent.BackgroundTransparency = 1.000
-SpeedPercent.Position = UDim2.new(1.03793716, 0, -0.232304826, 0)
-SpeedPercent.Size = UDim2.new(0, 38, 0, 48)
-SpeedPercent.Font = Enum.Font.SourceSans
-SpeedPercent.Text = "0"
-SpeedPercent.TextColor3 = Color3.fromRGB(255, 255, 255)
-SpeedPercent.TextSize = 20.000
+-- StarterGui.JustExec.Frame.TabNav.QuickHacks
+G2L["15"] = Instance.new("ImageButton", G2L["12"]);
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["Image"] = [[rbxassetid://12582724778]];
+G2L["15"]["Size"] = UDim2.new(0, 49, 0, 52);
+G2L["15"]["Name"] = [[QuickHacks]];
+G2L["15"]["Position"] = UDim2.new(0.01768522523343563, 0, 0.4000850319862366, 0);
+G2L["15"]["BackgroundTransparency"] = 1;
 
-Fly.Name = "Fly"
-Fly.Parent = QuickHacksPanel
-Fly.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-Fly.Position = UDim2.new(-0.00465116277, 0, 0.215566069, 0)
-Fly.Size = UDim2.new(0, 114, 0, 50)
-Fly.Font = Enum.Font.SourceSans
-Fly.Text = "Fly"
-Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
-Fly.TextSize = 19.000
+-- StarterGui.JustExec.Frame.TabNav.QuickHacks.LocalScript
+G2L["16"] = Instance.new("LocalScript", G2L["15"]);
 
-UICorner_6.Parent = Fly
 
-ImageButton.Parent = JustExec
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 0.750
-ImageButton.Position = UDim2.new(0.913005352, 0, 0.889247119, 0)
-ImageButton.Size = UDim2.new(0, 79, 0, 73)
-ImageButton.Image = "http://www.roblox.com/asset/?id=12774038652"
+-- StarterGui.JustExec.Frame.QuickHacksPanel
+G2L["17"] = Instance.new("ScrollingFrame", G2L["2"]);
+G2L["17"]["Active"] = true;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["BackgroundTransparency"] = 1;
+G2L["17"]["Size"] = UDim2.new(0, 430, 0, 291);
+G2L["17"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Position"] = UDim2.new(0.10231660306453705, 0, 0.12612612545490265, 0);
+G2L["17"]["Visible"] = false;
+G2L["17"]["Name"] = [[QuickHacksPanel]];
 
-UICorner_7.Parent = ImageButton
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump
+G2L["18"] = Instance.new("Frame", G2L["17"]);
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["Style"] = Enum.FrameStyle.RobloxRound;
+G2L["18"]["Size"] = UDim2.new(0, 300, 0, 49);
+G2L["18"]["Position"] = UDim2.new(0.5139535069465637, -150, 0.11281456053256989, 0);
+G2L["18"]["Name"] = [[Jump]];
 
--- Scripts:
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.Bar
+G2L["19"] = Instance.new("Frame", G2L["18"]);
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(52, 135, 213);
+G2L["19"]["Size"] = UDim2.new(0, 255, 0, 10);
+G2L["19"]["Position"] = UDim2.new(0, 14, 0, 12);
+G2L["19"]["Name"] = [[Bar]];
 
-local function KNHSBIC_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.Bar.Button
+G2L["1a"] = Instance.new("TextButton", G2L["19"]);
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["TextSize"] = 14;
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["1a"]["Name"] = [[Button]];
+G2L["1a"]["Text"] = [[]];
+G2L["1a"]["Style"] = Enum.ButtonStyle.RobloxRoundDropdownButton;
+G2L["1a"]["Position"] = UDim2.new(0, 18, 0, -10);
 
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.Bar.Button.Slider
+G2L["1b"] = Instance.new("LocalScript", G2L["1a"]);
+G2L["1b"]["Name"] = [[Slider]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.Percent
+G2L["1c"] = Instance.new("NumberValue", G2L["18"]);
+G2L["1c"]["Value"] = 15;
+G2L["1c"]["Name"] = [[Percent]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.JumpLabel
+G2L["1d"] = Instance.new("TextLabel", G2L["18"]);
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1d"]["TextSize"] = 20;
+G2L["1d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["Size"] = UDim2.new(0, 69, 0, 50);
+G2L["1d"]["Text"] = [[Jump]];
+G2L["1d"]["Name"] = [[JumpLabel]];
+G2L["1d"]["BackgroundTransparency"] = 1;
+G2L["1d"]["Position"] = UDim2.new(-0.2768690884113312, 0, -0.16418391466140747, 0);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.JumpPercent
+G2L["1e"] = Instance.new("TextLabel", G2L["18"]);
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1e"]["TextSize"] = 20;
+G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["Size"] = UDim2.new(0, 38, 0, 48);
+G2L["1e"]["Text"] = [[0]];
+G2L["1e"]["Name"] = [[JumpPercent]];
+G2L["1e"]["BackgroundTransparency"] = 1;
+G2L["1e"]["Position"] = UDim2.new(1.0379371643066406, 0, -0.23230482637882233, 0);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed
+G2L["1f"] = Instance.new("Frame", G2L["17"]);
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1f"]["Style"] = Enum.FrameStyle.RobloxRound;
+G2L["1f"]["Size"] = UDim2.new(0, 300, 0, 49);
+G2L["1f"]["Position"] = UDim2.new(0.5093023777008057, -150, 0.018134452402591705, 0);
+G2L["1f"]["Name"] = [[Speed]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.Bar
+G2L["20"] = Instance.new("Frame", G2L["1f"]);
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(52, 135, 213);
+G2L["20"]["Size"] = UDim2.new(0, 255, 0, 10);
+G2L["20"]["Position"] = UDim2.new(0, 14, 0, 12);
+G2L["20"]["Name"] = [[Bar]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.Bar.Button
+G2L["21"] = Instance.new("TextButton", G2L["20"]);
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["TextSize"] = 14;
+G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["21"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["21"]["Name"] = [[Button]];
+G2L["21"]["Text"] = [[]];
+G2L["21"]["Style"] = Enum.ButtonStyle.RobloxRoundDropdownButton;
+G2L["21"]["Position"] = UDim2.new(0, 37, 0, -11);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.Bar.Button.Slider
+G2L["22"] = Instance.new("LocalScript", G2L["21"]);
+G2L["22"]["Name"] = [[Slider]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.Percent
+G2L["23"] = Instance.new("NumberValue", G2L["1f"]);
+G2L["23"]["Value"] = 15;
+G2L["23"]["Name"] = [[Percent]];
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.SpeedLabel
+G2L["24"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["24"]["TextSize"] = 20;
+G2L["24"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["Size"] = UDim2.new(0, 69, 0, 50);
+G2L["24"]["Text"] = [[Speed]];
+G2L["24"]["Name"] = [[SpeedLabel]];
+G2L["24"]["BackgroundTransparency"] = 1;
+G2L["24"]["Position"] = UDim2.new(-0.2768690884113312, 0, -0.16418391466140747, 0);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.SpeedPercent
+G2L["25"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["25"]["TextSize"] = 20;
+G2L["25"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["Size"] = UDim2.new(0, 38, 0, 48);
+G2L["25"]["Text"] = [[0]];
+G2L["25"]["Name"] = [[SpeedPercent]];
+G2L["25"]["BackgroundTransparency"] = 1;
+G2L["25"]["Position"] = UDim2.new(1.0379371643066406, 0, -0.23230482637882233, 0);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Fly
+G2L["26"] = Instance.new("TextButton", G2L["17"]);
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["26"]["TextSize"] = 19;
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["Size"] = UDim2.new(0, 114, 0, 50);
+G2L["26"]["Name"] = [[Fly]];
+G2L["26"]["Text"] = [[Fly]];
+G2L["26"]["Position"] = UDim2.new(-0.004651162773370743, 0, 0.21556606888771057, 0);
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Fly.UICorner
+G2L["27"] = Instance.new("UICorner", G2L["26"]);
+
+
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Fly.LocalScript
+G2L["28"] = Instance.new("LocalScript", G2L["26"]);
+
+
+-- StarterGui.JustExec.ImageButton
+G2L["29"] = Instance.new("ImageButton", G2L["1"]);
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["Image"] = [[http://www.roblox.com/asset/?id=12774038652]];
+G2L["29"]["Size"] = UDim2.new(0, 79, 0, 73);
+G2L["29"]["Position"] = UDim2.new(0.9130053520202637, 0, 0.8892471194267273, 0);
+G2L["29"]["BackgroundTransparency"] = 0.75;
+
+-- StarterGui.JustExec.ImageButton.UICorner
+G2L["2a"] = Instance.new("UICorner", G2L["29"]);
+
+
+-- StarterGui.JustExec.ImageButton.LocalScript
+G2L["2b"] = Instance.new("LocalScript", G2L["29"]);
+
+
+-- StarterGui.JustExec.Frame.LocalScript
+local function C_8()
+local script = G2L["8"];
 	script.Parent.Draggable = true
 	script.Parent.Active = true
-end
-coroutine.wrap(KNHSBIC_fake_script)()
-local function HDIMBBX_fake_script() -- Clear.LocalScript 
-	local script = Instance.new('LocalScript', Clear)
-
+end;
+task.spawn(C_8);
+-- StarterGui.JustExec.Frame.ExecutorPanel.Clear.LocalScript
+local function C_c()
+local script = G2L["c"];
 	local button = script.Parent
 	local textbox = script.Parent.Parent.TextBox
 	button.MouseButton1Click:Connect(function()
 		textbox.Text = ""
 	end)
-end
-coroutine.wrap(HDIMBBX_fake_script)()
-local function BVLPBJ_fake_script() -- Execute.LocalScript 
-	local script = Instance.new('LocalScript', Execute)
-
+end;
+task.spawn(C_c);
+-- StarterGui.JustExec.Frame.ExecutorPanel.Execute.LocalScript
+local function C_f()
+local script = G2L["f"];
 	local button = script.Parent
 	local textbox = script.Parent.Parent.TextBox
 	button.MouseButton1Click:Connect(function()
 		loadstring(textbox.Text)()
 	end)
-end
-coroutine.wrap(BVLPBJ_fake_script)()
-local function ZXUFWJK_fake_script() -- Executor.LocalScript 
-	local script = Instance.new('LocalScript', Executor)
-
+end;
+task.spawn(C_f);
+-- StarterGui.JustExec.Frame.TabNav.Executor.LocalScript
+local function C_14()
+local script = G2L["14"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.QuickHacksPanel.Visible = false
 		script.Parent.Parent.Parent.ExecutorPanel.Visible = true
 	end)
-end
-coroutine.wrap(ZXUFWJK_fake_script)()
-local function EJLZWW_fake_script() -- QuickHacks.LocalScript 
-	local script = Instance.new('LocalScript', QuickHacks)
-
+end;
+task.spawn(C_14);
+-- StarterGui.JustExec.Frame.TabNav.QuickHacks.LocalScript
+local function C_16()
+local script = G2L["16"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.ExecutorPanel.Visible = false
 		script.Parent.Parent.Parent.QuickHacksPanel.Visible = true
 	end)
-end
-coroutine.wrap(EJLZWW_fake_script)()
-local function WYGSN_fake_script() -- Button.Slider 
-	local script = Instance.new('LocalScript', Button)
-
+end;
+task.spawn(C_16);
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Jump.Bar.Button.Slider
+local function C_1b()
+local script = G2L["1b"];
 	-- REMEMBER THIS! You can only drag a gui in offset and not scale!
 	
 	local sp = script.Parent
@@ -346,11 +401,11 @@ local function WYGSN_fake_script() -- Button.Slider
 		game.Players.LocalPlayer.Character.Humanoid.JumpHeight = percent.Value
 	end)
 	
-end
-coroutine.wrap(WYGSN_fake_script)()
-local function HRWW_fake_script() -- Button_2.Slider 
-	local script = Instance.new('LocalScript', Button_2)
-
+end;
+task.spawn(C_1b);
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Speed.Bar.Button.Slider
+local function C_22()
+local script = G2L["22"];
 	-- REMEMBER THIS! You can only drag a gui in offset and not scale!
 	
 	local sp = script.Parent
@@ -375,19 +430,19 @@ local function HRWW_fake_script() -- Button_2.Slider
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = percent.Value
 	end)
 	
-end
-coroutine.wrap(HRWW_fake_script)()
-local function ITUI_fake_script() -- Fly.LocalScript 
-	local script = Instance.new('LocalScript', Fly)
-
+end;
+task.spawn(C_22);
+-- StarterGui.JustExec.Frame.QuickHacksPanel.Fly.LocalScript
+local function C_28()
+local script = G2L["28"];
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring("loadstring(game:HttpGet('https://pastebin.com/raw/W5aQUui6'))()")
 	end)
-end
-coroutine.wrap(ITUI_fake_script)()
-local function ODXN_fake_script() -- ImageButton.LocalScript 
-	local script = Instance.new('LocalScript', ImageButton)
-
+end;
+task.spawn(C_28);
+-- StarterGui.JustExec.ImageButton.LocalScript
+local function C_2b()
+local script = G2L["2b"];
 	script.Parent.Draggable = true
 	script.Parent.Active = true
 	local Menu = script.Parent.Parent.Frame
@@ -415,5 +470,7 @@ local function ODXN_fake_script() -- ImageButton.LocalScript
 			)
 		end
 	end)
-end
-coroutine.wrap(ODXN_fake_script)()
+end;
+task.spawn(C_2b);
+
+return G2L["1"], require;
